@@ -15,24 +15,24 @@ public class GuessTheNumber {
         System.out.println("Welcome to the Guess the Number game.");
 
         while (true) {
-            int maxNumber = chooseDifficulty(sc);
-            int secretNumber = rnd.nextInt(maxNumber) + 1; // number from 1-100
+            int maximumNumber = chooseDifficulty(sc);
+            int hiddenNumber = rnd.nextInt(maximumNumber) + 1; // number from 1-100
             int attempts = 0;
 
-            System.out.println("I have chosen a number between 1 and 100. Guess.");
+            System.out.println("I have chosen a number between 1 and 100. Try to guess.");
 
             while (true) {
-                System.out.print("Enter  your guess: ");
+                System.out.print("Enter your guess: ");
                 int guess = readInt(sc);
                 attempts++;
 
-                if (guess < secretNumber) {
-                    System.out.println("small");
-                } else if (guess > secretNumber) {
-                    System.out.println("big");
+                if (guess < hiddenNumber) {
+                    System.out.println("its too small");
+                } else if (guess > hiddenNumber) {
+                    System.out.println("its too big");
                 } else {
-                    System.out.println("You guessed it");
-                    System.out.println("Attempts used: " + attempts);
+                    System.out.println("You guessed it, congrats");
+                    System.out.println("Attempts you used: " + attempts);
                     break;
                 }
             }
@@ -47,7 +47,7 @@ public class GuessTheNumber {
         }
     }
     public static  int chooseDifficulty(Scanner sc ) {
-        System.out.println("Choose difficulty level: ");
+        System.out.println("Choose difficulty of level: ");
         System.out.println("1. Easy (1-50)");
         System.out.println("2. Medium (1-100)");
         System.out.println("3. Hard (1-500)");
@@ -58,7 +58,7 @@ public class GuessTheNumber {
                 case 1: return 50;
                 case 2: return 100;
                 case 3: return 500;
-                default:System.out.print("Invalid choice, try again: ");
+                default:System.out.print("Incorrect choice, try again: ");
 
             }
         }
@@ -70,7 +70,7 @@ public class GuessTheNumber {
             try {
                 return Integer.parseInt(input);
             } catch (NumberFormatException e) {
-                System.out.println("Invalid input. Please enter a number: ");
+                System.out.println("Incorrect input. Please enter a number: ");
             }
         }
     }
