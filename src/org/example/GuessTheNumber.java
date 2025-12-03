@@ -19,7 +19,7 @@ public class GuessTheNumber {
             int hiddenNumber = rnd.nextInt(maximumNumber) + 1; // number from 1-100
             int attempts = 0;
 
-            System.out.println("I have chosen a number between 1 and 100. Try to guess.");
+            System.out.println("I have chosen a number between 1 and " + maximumNumber + ". Guess.");
 
             while (true) {
                 System.out.print("Enter your guess: ");
